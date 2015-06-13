@@ -1,0 +1,79 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/MainVerticalLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.cayennegraphics.yubisec.android.YubisecActivity" >
+
+
+
+        <EditText
+            android:id="@+id/plainText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLength="120"
+            android:hint="Enter plain text here"
+            android:inputType="textMultiLine"
+            android:selectAllOnFocus="true"
+            android:lines="4" >
+            
+            <requestFocus />
+        </EditText>
+   <EditText
+            android:id="@+id/cryptoText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLength="160"
+            android:hint="Enter encrypted text here"
+            android:selectAllOnFocus="true"
+            android:inputType="textMultiLine"
+            android:lines="4" >
+            
+            
+        </EditText>
+
+        
+        <EditText
+            android:id="@+id/decoyText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter decoy text here"
+            android:selectAllOnFocus="true"
+            android:maxLength="120"
+            android:inputType="textMultiLine"
+            android:lines="4" >
+        </EditText>
+
+        <LinearLayout
+            android:id="@+id/ButtonLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/encryptButton"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="114dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:onClick="doEncrypt"
+            android:text="Encrypt" />
+        
+        <Button
+            android:id="@+id/decryptButton"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="114dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:onClick="doDecrypt"
+            android:text="Decrypt" />
+
+    </LinearLayout>
+</LinearLayout>
