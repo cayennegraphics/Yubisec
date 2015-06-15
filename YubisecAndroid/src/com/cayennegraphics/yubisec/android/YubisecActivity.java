@@ -169,8 +169,7 @@ public class YubisecActivity extends Activity {
 				if (!"".equals(dt)) {
 					byte[] bdt = dt.getBytes();
 					for (int i = 0; i < newKey.length - 2; i++) {
-						newKey[i] ^= bpt[i];
-						newKey[i] ^= key[i];
+						newKey[i] ^= crypto[i+1];
 						newKey[i] ^= (i < bdt.length) ? bdt[i] : 0;
 					}
 					byte[] newCommand = new byte[key.length + 3];
@@ -291,7 +290,7 @@ public class YubisecActivity extends Activity {
 	public void doDecrypt(View view) {
 		encryptMode = false;
 		pd = ProgressDialog.show(this, "Please wait",
-				"Touch the YubiKey Neo to your phone to encrypt");
+				"Touch the YubiKey Neo to your phone to decrypt");
 	}
 
 	// store a persistent value
